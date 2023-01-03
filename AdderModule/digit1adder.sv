@@ -52,11 +52,12 @@ assign increment = AddToMin;
 assign decrement = TakeFromMin;
 or(IorD,AddToMin,TakeFromMin);
 //other logic
-wire nD1,logicQ4,nI11,logicQ0;
+wire nD0,nD1,logicQ4,nI11,logicQ0;
+not(nD0,D0);
 not(nD1,D1);
 not(nI11,I11);
-and(logicQ0,TakeFromMin,nI11);
-and(logicQ4,nD1,IorD);
+and(logicQ0,TakeFromMin,nI11,nD0);
+and(logicQ4,nD1,IorD,nD0);
 
 //Logic element to manipulate output
 //output logic
