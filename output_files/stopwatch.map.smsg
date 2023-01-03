@@ -1,0 +1,7 @@
+Info (10281): Verilog HDL Declaration information at c1_4.sv(2): object "T1" differs only in case from object "t1" in the same scope File: D:/Documents/digital/c1_4.sv Line: 2
+Info (10281): Verilog HDL Declaration information at c1_4.sv(2): object "T2" differs only in case from object "t2" in the same scope File: D:/Documents/digital/c1_4.sv Line: 2
+Info (10281): Verilog HDL Declaration information at c0_9.sv(2): object "T1" differs only in case from object "t1" in the same scope File: D:/Documents/digital/c0_9.sv Line: 2
+Info (10281): Verilog HDL Declaration information at c0_9.sv(2): object "T2" differs only in case from object "t2" in the same scope File: D:/Documents/digital/c0_9.sv Line: 2
+Info (10281): Verilog HDL Declaration information at c0_9.sv(2): object "T3" differs only in case from object "t3" in the same scope File: D:/Documents/digital/c0_9.sv Line: 2
+Info (10281): Verilog HDL Declaration information at c0_5.sv(3): object "T1" differs only in case from object "t1" in the same scope File: D:/Documents/digital/c0_5.sv Line: 3
+Info (10281): Verilog HDL Declaration information at c0_5.sv(3): object "T2" differs only in case from object "t2" in the same scope File: D:/Documents/digital/c0_5.sv Line: 3

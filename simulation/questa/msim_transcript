@@ -1,0 +1,163 @@
+# Reading pref.tcl
+# do stopwatch_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -sv -work work +incdir+D:/Documents/digital {D:/Documents/digital/t_ff_with_async_enable_set_reset.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:26:15 on Jan 03,2023
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/Documents/digital" D:/Documents/digital/t_ff_with_async_enable_set_reset.sv 
+# -- Compiling module t_ff_with_async_enable_set_reset
+# 
+# Top level modules:
+# 	t_ff_with_async_enable_set_reset
+# End time: 19:26:15 on Jan 03,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/Documents/digital {D:/Documents/digital/stopwatch.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:26:15 on Jan 03,2023
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/Documents/digital" D:/Documents/digital/stopwatch.sv 
+# -- Compiling module stopwatch
+# 
+# Top level modules:
+# 	stopwatch
+# End time: 19:26:15 on Jan 03,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/Documents/digital {D:/Documents/digital/c1_4.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:26:15 on Jan 03,2023
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/Documents/digital" D:/Documents/digital/c1_4.sv 
+# -- Compiling module c1_4
+# 
+# Top level modules:
+# 	c1_4
+# End time: 19:26:15 on Jan 03,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/Documents/digital {D:/Documents/digital/c0_9.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:26:16 on Jan 03,2023
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/Documents/digital" D:/Documents/digital/c0_9.sv 
+# -- Compiling module c0_9
+# 
+# Top level modules:
+# 	c0_9
+# End time: 19:26:16 on Jan 03,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/Documents/digital {D:/Documents/digital/c0_5.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:26:16 on Jan 03,2023
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/Documents/digital" D:/Documents/digital/c0_5.sv 
+# -- Compiling module c0_5
+# 
+# Top level modules:
+# 	c0_5
+# End time: 19:26:16 on Jan 03,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/Documents/digital {D:/Documents/digital/boolean_circuit_7.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:26:16 on Jan 03,2023
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/Documents/digital" D:/Documents/digital/boolean_circuit_7.sv 
+# -- Compiling module boolean_circuit_7
+# 
+# Top level modules:
+# 	boolean_circuit_7
+# End time: 19:26:16 on Jan 03,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/Documents/digital {D:/Documents/digital/boolean_circuit_6.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:26:16 on Jan 03,2023
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/Documents/digital" D:/Documents/digital/boolean_circuit_6.sv 
+# -- Compiling module boolean_circuit_6
+# 
+# Top level modules:
+# 	boolean_circuit_6
+# End time: 19:26:16 on Jan 03,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/Documents/digital {D:/Documents/digital/boolean_circuit_5.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:26:16 on Jan 03,2023
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/Documents/digital" D:/Documents/digital/boolean_circuit_5.sv 
+# -- Compiling module boolean_circuit_5
+# 
+# Top level modules:
+# 	boolean_circuit_5
+# End time: 19:26:16 on Jan 03,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/Documents/digital {D:/Documents/digital/boolean_circuit_4.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:26:16 on Jan 03,2023
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/Documents/digital" D:/Documents/digital/boolean_circuit_4.sv 
+# -- Compiling module boolean_circuit_4
+# 
+# Top level modules:
+# 	boolean_circuit_4
+# End time: 19:26:16 on Jan 03,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/Documents/digital {D:/Documents/digital/boolean_circuit_3.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:26:16 on Jan 03,2023
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/Documents/digital" D:/Documents/digital/boolean_circuit_3.sv 
+# -- Compiling module boolean_circuit_3
+# 
+# Top level modules:
+# 	boolean_circuit_3
+# End time: 19:26:16 on Jan 03,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/Documents/digital {D:/Documents/digital/boolean_circuit_2.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:26:16 on Jan 03,2023
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/Documents/digital" D:/Documents/digital/boolean_circuit_2.sv 
+# -- Compiling module boolean_circuit_2
+# 
+# Top level modules:
+# 	boolean_circuit_2
+# End time: 19:26:16 on Jan 03,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/Documents/digital {D:/Documents/digital/boolean_circuit_13.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:26:17 on Jan 03,2023
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/Documents/digital" D:/Documents/digital/boolean_circuit_13.sv 
+# -- Compiling module boolean_circuit_13
+# 
+# Top level modules:
+# 	boolean_circuit_13
+# End time: 19:26:17 on Jan 03,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/Documents/digital {D:/Documents/digital/boolean_circuit_12.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:26:17 on Jan 03,2023
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/Documents/digital" D:/Documents/digital/boolean_circuit_12.sv 
+# -- Compiling module boolean_circuit_12
+# 
+# Top level modules:
+# 	boolean_circuit_12
+# End time: 19:26:17 on Jan 03,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/Documents/digital {D:/Documents/digital/boolean_circuit_11.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:26:17 on Jan 03,2023
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/Documents/digital" D:/Documents/digital/boolean_circuit_11.sv 
+# -- Compiling module boolean_circuit_11
+# 
+# Top level modules:
+# 	boolean_circuit_11
+# End time: 19:26:17 on Jan 03,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/Documents/digital {D:/Documents/digital/boolean_circuit_1.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:26:17 on Jan 03,2023
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/Documents/digital" D:/Documents/digital/boolean_circuit_1.sv 
+# -- Compiling module boolean_circuit_1
+# 
+# Top level modules:
+# 	boolean_circuit_1
+# End time: 19:26:17 on Jan 03,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
