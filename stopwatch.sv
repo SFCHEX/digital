@@ -7,7 +7,6 @@ module stopwatch(input wire clk, REVERSE,ON_OFF,RESET,SPEED_UP,SPEED_DOWN,ADD,SU
 */    
     c0_9 c1(clk,ON_OFF         ,REVERSE,load[0:7]  ,Q[1:4] );
 	 
-	 
     boolean_circuit_4 en1(REVERSE,Q[1],Q[2],Q[3],Q[4],enableCondition1);
 	 and(enableCounter1,ON_OFF,enableCondition1);
 	 
