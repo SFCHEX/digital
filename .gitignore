@@ -1,9 +1,12 @@
 
 db/
 DIGITAL-DESIGN-PROJECT-CODE/
-db/stopwatch.quiproj.21564.rdr.flock
+db/digital.quiproj.21564.rdr.flock
 DIGITAL-DESIGN-PROJECT-CODE/
 
+output_files/
+simulation/
+incremental_db/
 # ignore ModelSim generated files and directories (temp files and so on)
 [_@]*
 
