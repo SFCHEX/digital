@@ -1,4 +1,4 @@
-module c0_9(input wire clk, enable, reverse, input wire [0:7]load,output wire [1:4]Q);
+module c0_9(input wire clk, enable, reverse, input wire [7:0]load,output wire [4:1]Q);
 	wire T1, T2,T3;
 	
 	boolean_circuit_1 b1(reverse,Q[1],Q[2],Q[3],Q[4],T1);
