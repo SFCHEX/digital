@@ -77,6 +77,7 @@ not(QnRT2[1],Qn[1]);
 not(QnRT2[2],Qn[2]);
 not(QnRT2[3],Qn[3]);
 
+//QnR//
 and(QnR[0],enable,QnRT2[0]);
 and(QnR[1],enable,QnRT2[1]);
 and(QnR[2],enable,QnRT2[2]);

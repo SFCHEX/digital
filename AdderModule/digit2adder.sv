@@ -53,11 +53,15 @@ not(nQn[1],Qn[1]);
 not(nQn[2],Qn[2]);
 not(nQn[3],Qn[3]);
 
+//not reset 
+wire nreset;
+not(nreset,reset);
+
 //Intializing Qns
-and(QnR[0],nQn[0],enable);
-and(QnR[1],nQn[1],enable);
-and(QnR[2],nQn[2],enable);
-and(QnR[3],nQn[3],enable);
+and(QnR[0],nQn[0],enable,nreset);
+and(QnR[1],nQn[1],enable,nreset);
+and(QnR[2],nQn[2],enable,nreset);
+and(QnR[3],nQn[3],enable,nreset);
 
 
 endmodule
