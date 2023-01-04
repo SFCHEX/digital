@@ -3,7 +3,7 @@ module stopwatch(input wire clk, REVERSE,START,RESET,SPEED_UP,SPEED_DOWN,ADD,SUB
 	wire enableCounter1,enableCounter2,enableCounter3;
     wire permitter;
 	wire [16:1]values;
-	wire [16:1]values_from_adder;
+	wire [8:1]values_from_adder;
     wire ON_OFF;
     wire [16:1]set;
     wire [16:1]reset;
@@ -19,14 +19,15 @@ module stopwatch(input wire clk, REVERSE,START,RESET,SPEED_UP,SPEED_DOWN,ADD,SUB
   
 //    clock_signals cs(clk_in,SPEED_DOWN,SPEED_UP,clk);
     bool_equation_reset_values b55(RESET,REVERSE,ADD,signal,index_RESET);
-    bool_equation_selector b44(RESET,SUBTRACT,ADD,signal,selector);
-    FullAdderModule fa11(Q[12:9],Q[16:13],ADD,SUBTRACT,values_from_adder[16:1],signal);
+//  bool_equation_selector b44(RESET,SUBTRACT,ADD,signal,selector);
+//  FullAdderModule fa11(Q[12:9],Q[16:13],ADD,SUBTRACT,values_from_adder[8:1],signal);
 //	 
-    m3216 mx(array[index_RESET],values_from_adder[16:1],selector,values[16:1]);
+//  m3216 mx(array[index_RESET],{values_from_adder[8:1],Q[8:1]},selector,values[16:1]);
 //
-    or(permitter,ADD,SUBTRACT,RESET);
+    or(permitter,/*ADD,SUBTRACT,*/RESET);
 //
-    loader l(permitter,values[16:1],set[16:1],reset[16:1]);
+
+    loader l(permitter,array[index_RESET],set[16:1],reset[16:1]);
 
     wire REVERSE_i;
 	not(REVERSE_i,REVERSE);
