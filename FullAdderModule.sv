@@ -3,7 +3,7 @@ module FullAdderModule(
 input [3:0]q1,
 input [3:0]q2,
 input add,sub,
-output [3:0]qn1, qn1r, qn2, qn2r,
+output [15:0]out_final, //output 
 output reset
 );
 
@@ -15,6 +15,7 @@ Buttons are pressed-->signal1 module-->signal 01/11-->Clock opens for registors-
 //Temps
 wire [3:0]q1T;
 wire [3:0]q2T;
+wire [3:0]qn1, qn1r, qn2, qn2r;
 
 //signal 1
 wire [1:0]signal_1;    
@@ -40,4 +41,22 @@ digit1adder min1(signal_1[0],signal_1[1],q1,qn1,qn1r,increment,decrement);
 digit2adder min2(signal_2[0],signal_2[1],q2,qn2,qn2r,reset);
 
 // Gives output for preset and set signals that feed the loader into the flipflops
+//16 bit output 
+ or(out_final[0],0);
+ or(out_final[1],0);
+ or(out_final[2],0);
+ or(out_final[3],0);
+ or(out_final[4],0);
+ or(out_final[5],0);
+ or(out_final[6],0);
+ or(out_final[7],0);
+ or(out_final[8],qn1[0]);
+ or(out_final[9],qn1[1]);
+ or(out_final[10],qn1[2]);
+ or(out_final[11],qn1[3]);
+ or(out_final[12],qn2[0]);
+ or(out_final[13],qn2[1]);
+ or(out_final[14],qn2[2]);
+ or(out_final[15],qn2[3]);
+
 endmodule

@@ -12,7 +12,7 @@ module stopwatch(input wire clk, REVERSE,START,RESET,SPEED_UP,SPEED_DOWN,ADD,SUB
 
     initial begin
         array[0] = 16'b0001_0000_0010_0000; // 1020 BCD binary
-        array[1] = 16'b0100_0000_0011_0000; // 4030 BCD binary
+        array[1] = 16'b0100_0000_0011_0000; //gi 4030 BCD binary
     end 
 
 
