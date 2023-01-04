@@ -4,7 +4,7 @@ module Dflop (C, D, Q);
   output Q;  
   reg Q;  
  
-  always @(posedge C)  
+  always @(C)  
     begin  
       Q = D;  
     end  
