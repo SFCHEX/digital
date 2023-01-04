@@ -1,8 +1,9 @@
-module stopwatch(input wire clk_in, REVERSE,ON_OFF,RESET,SPEED_UP,SPEED_DOWN,ADD,SUBTRACT,output wire [16:1]Q);
+module stopwatch(input wire clk_in, REVERSE,START,RESET,SPEED_UP,SPEED_DOWN,ADD,SUBTRACT,output wire [16:1]Q);
     wire [27:0]load;
     wire enableCondition1,enableCondition2,enableCondition3;
 	wire enableCounter1,enableCounter2,enableCounter3;
     wire permitter;
+    wire ON_OFF;
 
     reg [15:0] array[1:0];
 
@@ -13,24 +14,21 @@ module stopwatch(input wire clk_in, REVERSE,ON_OFF,RESET,SPEED_UP,SPEED_DOWN,ADD
 
 
     
-	 /*      
     clock_signals(clk_in,clkslow,clkfast,clk)
     bool_equation_reset_values(reset,reverse,add,signal,index_reset)
     bool_equation_selector(reset,subtract,add,signal,selector)
     fullAdderModule(Q[12:9],Q[16:13],add,subtract,values_from_adder[16:1],signal);
-
     mux(selector,array[index_reset],values_from_adder[16:1],values[16:1]);
 
-
     or(permitter,add,subtract,reset);
+
     loader l(permitter,values[16:1],load[31:0]);
     comparator(array[reverse],Q[16:1],force_stop_signal)
 
     not(force_stop_signal_i,force_stop_signal)
-    and(start,ON_OFF,force_stop_signal_i)
+    and(ON_OFF,START,force_stop_signal_i)
 
-*/  
-    c0_9 c1(clk,ON_OFF         ,REVERSE,load[7:0]  ,Q[4:1] );
+    c0_9 c1(clk,start,REVERSE,load[7:0]  ,Q[4:1] );
 	 
     boolean_circuit_4 en1(REVERSE,Q[1],Q[2],Q[3],Q[4],enableCondition1);
 	 and(enableCounter1,ON_OFF,enableCondition1);
