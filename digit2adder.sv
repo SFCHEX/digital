@@ -34,10 +34,11 @@ not(QnRT[3],QnT[3]);
 
 
 //Value checking 
-wire if5,if0,o50;
+wire if1,if5,if0,o50;
 and(if5,QnT[0],QnRT[1],QnT[2],QnRT[3]); //0101
 and(if0,QnRT[0],QnRT[1],QnRT[2],QnRT[3]); //0000
-or(o50,if5,if0); //or both
+
+or(o50,if5,if0,DN1); //or both
 and(reset,o50,enable)  ; //reset signal
 
 //Output manipulations
