@@ -25,7 +25,7 @@ module stopwatch(input wire clk_in, REVERSE,START,RESET,SPEED_UP,SPEED_DOWN,ADD,
     bool_equation_selector b44(RESET,SUBTRACT,ADD,signal,selector);
     FullAdderModule fa11(Q[12:9],Q[16:13],ADD,SUBTRACT,values_from_adder[8:1],signal);
 	 
-    m3216 mx(array[index_RESET],{values_from_adder[8:1],Q[8:1]},selector,values[16:1]);
+    m3216 mx({values_from_adder[8:1],Q[8:1]},array[index_RESET],selector,values[16:1]);
 
     or(permitter,ADD,SUBTRACT,RESET);
 
