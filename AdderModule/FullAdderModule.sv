@@ -3,7 +3,7 @@ module FullAdderModule(
 input [3:0]q1,
 input [3:0]q2,
 input add,sub,
-output [15:0]out_final,
+output [15:0]out_final, //output 
 output reset
 );
 
