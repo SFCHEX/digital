@@ -42,6 +42,7 @@ digit2adder min2(signal_2[0],signal_2[1],q2,qn2,qn2r,reset);
 
 // Gives output for preset and set signals that feed the loader into the flipflops
 //16 bit output 
+
  or(out_final[0],qn1[0]);
  or(out_final[1],qn1[1]);
  or(out_final[2],qn1[2]);
@@ -50,5 +51,6 @@ digit2adder min2(signal_2[0],signal_2[1],q2,qn2,qn2r,reset);
  or(out_final[5],qn2[1]);
  or(out_final[6],qn2[2]);
  or(out_final[7],qn2[3]);
+
 
 endmodule
