@@ -15,8 +15,8 @@ module stopwatch(input wire clk_in, REVERSE,ON_OFF,RESET,SPEED_UP,SPEED_DOWN,ADD
     
 	 /*      
     clock_signals(clk_in,clkslow,clkfast,clk)
-    bool_equation_reset_values(index_reset,reset,reverse,add,signal)
-
+    bool_equation_reset_values(reset,reverse,add,signal,index_reset)
+    bool_equation_selector(reset,subtract,add,signal,selector)
     fullAdderModule(Q[12:9],Q[16:13],add,subtract,values_from_adder[16:1],signal);
 
     mux(selector,array[index_reset],values_from_adder[16:1],values[16:1]);
