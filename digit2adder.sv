@@ -37,10 +37,7 @@ not(QnRT[3],QnT[3]);
 wire if1,if5,if0,o50;
 and(if5,QnT[0],QnRT[1],QnT[2],QnRT[3]); //0101
 and(if0,QnRT[0],QnRT[1],QnRT[2],QnRT[3]); //0000
-and(if1,QnRT[0],QnRT[1],QnRT[2],QnT[3]) //0001
-//Decrement and 1:
-wire DN1;
-and(DN1,sub,if1);
+
 or(o50,if5,if0,DN1); //or both
 and(reset,o50,enable)  ; //reset signal
 

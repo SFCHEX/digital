@@ -53,7 +53,5 @@ digit2adder min2(signal_2[0],signal_2[1],q2,qn2,qn2r,reset);
  or(out_final[7],qn2[3]);
 
 
-//reset signal 
-o
 
 endmodule
