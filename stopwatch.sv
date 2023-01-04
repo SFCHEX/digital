@@ -18,7 +18,7 @@ module stopwatch(input wire clk, REVERSE_SIGNAL,START,RESET,SPEED_UP,SPEED_DOWN,
     end 
     wire START_i;
     not(START_i,START);
-    and(REVERSE,START_i,REVERSE_SIGNAL);
+    lat l(REVERSE,START_i,REVERSE_SIGNAL);
   
 //  clock_signals cs(clk_in,SPEED_DOWN,SPEED_UP,clk);
     bool_equation_reset_values b55(RESET,REVERSE,ADD,signal,index_RESET);
@@ -30,11 +30,13 @@ module stopwatch(input wire clk, REVERSE_SIGNAL,START,RESET,SPEED_UP,SPEED_DOWN,
     or(permitter,/*ADD,SUBTRACT,*/RESET);
 //
 
-    loader l(permitter,array[index_RESET],set[16:1],reset[16:1]);
+    loader lo(permitter,array[index_RESET],set[16:1],reset[16:1]);
 
     wire REVERSE_i;
-	not(REVERSE_i,REVERSE);
+	 not(REVERSE_i,REVERSE);
     comparator c12(array[REVERSE_i],Q[16:1],force_stop_signal);
+	 
+	 
 	 
     not(force_stop_signal_i,force_stop_signal);
     and(ON_OFF,START,force_stop_signal_i);
