@@ -6,6 +6,6 @@ Normal_clock mode_normal(clock,clock_normal);
 Sped_up_clock mode_fast(clock,clock_fast);
 Sped_up_clock mode_slow(clock,clock_slow);
 
-m41 mode(clock_normal,clock_normal,clock_fast,clock_slow,slow_down,speed_up,out_clock);
+m41 mode(clock_normal,clock_fast,clock_slow,clock_normal,speed_up,slow_down,out_clock);
 
 endmodule
