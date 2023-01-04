@@ -7,17 +7,16 @@ module t_ff_with_async_enable_set_reset (
   output reg q
 );
   initial q=0;
-  always @ (posedge clk) begin
-      if (enable) begin
+  always @ (posedge clk or posedge set or posedge reset) begin
+
         if (set) begin
           q <= 1;
         end
         else if (reset) begin
           q <= 0;
         end
-        else if (t) begin
+        else if (enable && t) begin
           q <= ~q;
         end
-      end
     end
 endmodule
