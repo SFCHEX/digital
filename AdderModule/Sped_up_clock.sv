@@ -1,8 +1,18 @@
 module Sped_up_clock(input clock_in,output reg clock_out);
 
-parameter normal_mode = 28'd0;  //decimal equivilant to convert the fpga clock to counting speed
+// input clock on FPGA
+// output clock after dividing the input clock by divisor
+reg[27:0] counter=28'd0;
+parameter DIVISOR = 28'd2;
+// The frequency of the output clk_out
 
-Clock_divider mode_normal(clock_in,normal_mode,clock_out);
+always @(posedge clock_in)
+begin
+ counter <= counter + 28'd1;
+ if(counter>=(DIVISOR-1))
+  counter <= 28'd0;
+ clock_out <= (counter<DIVISOR/2)?1'b1:1'b0;
+end
 
 
 endmodule
