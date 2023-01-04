@@ -1,4 +1,4 @@
-module stopwatch(input wire clk_in, REVERSE,START,RESET,SPEED_UP,SPEED_DOWN,ADD,SUBTRACT,output wire [16:1]Q);
+module stopwatch(input wire clk, REVERSE,START,RESET,SPEED_UP,SPEED_DOWN,ADD,SUBTRACT,output wire [16:1]Q);
     wire [31:0]load;
     wire enableCondition1,enableCondition2,enableCondition3;
 	 wire enableCounter1,enableCounter2,enableCounter3;
@@ -16,7 +16,7 @@ module stopwatch(input wire clk_in, REVERSE,START,RESET,SPEED_UP,SPEED_DOWN,ADD,
 
 
   
-    clock_signals cs(clk_in,SPEED_DOWN,SPEED_UP,clk);
+//    clock_signals cs(clk_in,SPEED_DOWN,SPEED_UP,clk);
     bool_equation_reset_values b55(reset,reverse,add,signal,index_reset);
     bool_equation_selector b44(reset,subtract,add,signal,selector);
     FullAdderModule fa11(Q[12:9],Q[16:13],add,subtract,values_from_adder[16:1],signal);
