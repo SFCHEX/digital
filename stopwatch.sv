@@ -9,6 +9,8 @@ module stopwatch(input wire clk_in, REVERSE,START,RESET,SPEED_UP,SPEED_DOWN,ADD,
     wire [16:1]reset;
     reg [15:0] array[1:0];
     wire index_RESET;
+    wire selector;
+    wire signal;
 
 
     initial begin
