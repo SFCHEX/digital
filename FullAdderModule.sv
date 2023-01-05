@@ -54,7 +54,7 @@ digit2adder min2(signal_2[0],signal_2[1],q2,qn2,qn2r,reset);
 
 //not reset
 wire not_reset;
-not(not_reset,reset)
+not(not_reset,reset);
 and(out_final[0],not_reset);
 and(out_final[1],not_reset);
 and(out_final[2],not_reset);
