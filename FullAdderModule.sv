@@ -52,6 +52,17 @@ digit2adder min2(signal_2[0],signal_2[1],q2,qn2,qn2r,reset);
  or(out_final[6],qn2[2]);
  or(out_final[7],qn2[3]);
 
+//not reset
+wire not_reset;
+not(not_reset,reset)
+and(out_final[0],not_reset);
+and(out_final[1],not_reset);
+and(out_final[2],not_reset);
+and(out_final[3],not_reset);
+and(out_final[4],not_reset);
+and(out_final[5],not_reset);
+and(out_final[6],not_reset);
+and(out_final[7],not_reset);
 
 
 endmodule

@@ -19,7 +19,7 @@ module stopwatch(input wire clk_in, REVERSE,START,RESET,SPEED_UP,SPEED_DOWN,ADD,
     wire START_i;
     not(START_i,START);
 //  lat l(REVERSE,START_i,REVERSE_SIGNAL);
-  
+    //boolean_count_mode countMode(START,SPEED_UP,SPEED_DOWN);
     clock_signals cs(clk_in,SPEED_DOWN,SPEED_UP,clk);
     bool_equation_reset_values b55(RESET,REVERSE,ADD,signal,index_RESET);
     bool_equation_selector b44(RESET,SUBTRACT,ADD,signal,selector);
