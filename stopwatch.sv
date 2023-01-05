@@ -22,7 +22,7 @@ module stopwatch(input wire clk_in, REVERSE,START,RESET,SPEED_UP,SPEED_DOWN,ADD,
     //boolean_count_mode countMode(START,SPEED_UP,SPEED_DOWN);
     clock_signals cs(clk_in,SPEED_DOWN,SPEED_UP,clk);
     bool_equation_reset_values b55(RESET,REVERSE,ADD,signal,index_RESET);
-    bool_equation_selector b44(RESET,SUBTRACT,ADD,signal,selector);
+    or(selector,reset,signal);
     FullAdderModule fa11(Q[12:9],Q[16:13],ADD,SUBTRACT,values_from_adder[8:1],signal);
 	 
     m3216 mx({values_from_adder[8:1],Q[8:1]},array[index_RESET],selector,values[16:1]);
@@ -32,7 +32,7 @@ module stopwatch(input wire clk_in, REVERSE,START,RESET,SPEED_UP,SPEED_DOWN,ADD,
     loader lo(permitter,values[16:1],set[16:1],reset[16:1]);
 
     wire REVERSE_i;
-	 not(REVERSE_i,REVERSE);
+	not(REVERSE_i,REVERSE);
     comparator c12(array[REVERSE_i],Q[16:1],force_stop_signal);
 	 
 	 
