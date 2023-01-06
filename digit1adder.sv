@@ -62,10 +62,10 @@ and(logicQ4,nD1,IorD,nD0);
 //Logic element to manipulate output
 //output logic
 
-m22 mQn0(QnT2[0],QnT[0],low,high,logicQ0);  //Will always pass QnT to Qn unless there is a I/D signal
-m22 mQn1(QnT2[1],QnT[1],low,high,IorD);   //if reset is high all values are manipulated
-m22 mQn2(QnT2[2],QnT[2],low,high,IorD);
-m22 mQn3(QnT2[3],QnT[3],low,high,logicQ4);
+ m22 mQn0(QnT2[0],QnT[0],low,enable,logicQ0);  //Will always pass QnT to Qn unless there is a I/D signal
+ m22 mQn1(QnT2[1],QnT[1],low,enable,IorD);   //if reset is high all values are manipulated
+ m22 mQn2(QnT2[2],QnT[2],low,enable,IorD);
+ m22 mQn3(QnT2[3],QnT[3],low,enable,logicQ4);
 
 and(Qn[0],enable,QnT2[0]);
 and(Qn[1],enable,QnT2[1]);
