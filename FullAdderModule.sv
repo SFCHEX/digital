@@ -46,27 +46,26 @@ digit2adder min2(signal_2[0],signal_2[1],in_final[15:12],qn2,qn2r,reset);
 
 // Gives output for preset and set signals that feed the loader into the flipflops
 //16 bit output 
- or(out_final[0],in_final[0]);
- or(out_final[1],in_final[1]);
- or(out_final[2],in_final[2]);
- or(out_final[3],in_final[3]);
- or(out_final[4],in_final[4]);
- or(out_final[5],in_final[5]);
- or(out_final[6],in_final[6]);
- or(out_final[7],in_final[7]);
-
-//Intialization:
-
- or(out_final[8],qn1[0]);
- or(out_final[9],qn1[1]);
- or(out_final[10],qn1[2]);
- or(out_final[11],qn1[3]);
- or(out_final[12],qn2[0]);
- or(out_final[13],qn2[1]);
- or(out_final[14],qn2[2]);
- or(out_final[15],qn2[3]);
+wire add_or_sub;
+or(add_or_sub,add,sub);
+and(out_final[0],add_or_sub,in_final[0]);
+and(out_final[1],add_or_sub,in_final[1]);
+and(out_final[2],add_or_sub,in_final[2]);
+and(out_final[3],add_or_sub,in_final[3]);
+and(out_final[4],add_or_sub,in_final[4]);
+and(out_final[5],add_or_sub,in_final[5]);
+and(out_final[6],add_or_sub,in_final[6]);
+and(out_final[7],add_or_sub,in_final[7]);
 
 
+and(out_final[8], add_or_sub,qn1[0]);
+and(out_final[9], add_or_sub,qn1[1]);
+and(out_final[10],add_or_sub,qn1[2]);
+and(out_final[11],add_or_sub,qn1[3]);
+and(out_final[12],add_or_sub,qn2[0]);
+and(out_final[13],add_or_sub,qn2[1]);
+and(out_final[14],add_or_sub,qn2[2]);
+and(out_final[15],add_or_sub,qn2[3]);
 
 
 endmodule
