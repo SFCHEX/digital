@@ -1,9 +1,9 @@
 
 module FullAdderModule(
-input [3:0]q1,
-input [3:0]q2,
+
 input add,sub,
-output [7:0]out_final, //output 
+input [15:0]in_final,
+output [15:0]out_final, //output 
 output reset
 );
 
@@ -11,6 +11,10 @@ output reset
 /*
 Buttons are pressed-->signal1 module-->signal 01/11-->Clock opens for registors-->values are passed to adding digit 1:
 */
+//defs 
+wire [3:0]q1;
+wire [3:0]q2;
+
 
 //Temps
 wire [3:0]q1T;
@@ -29,28 +33,39 @@ wire increment,decrement,enableR2;
 Signal2 signal2(increment,decrement,signal_1,enableR2,signal_2);
 
 //Filling registors//
-registor4b r1(enableR1,q1,q1T);  
-registor4b r2(enableR2,q2,q2T);
+registor4b r1(enableR1,in_final[11:8],q1T);  
+registor4b r2(enableR2,in_final[15:12],q2T);
 
 //adding modules//
 
 // 2min adder
-digit1adder min1(signal_1[0],signal_1[1],q1,qn1,qn1r,increment,decrement); 
+digit1adder min1(signal_1[0],signal_1[1],in_final[11:8],qn1,qn1r,increment,decrement); 
 
 //1 min adder
-digit2adder min2(signal_2[0],signal_2[1],q2,qn2,qn2r,reset);
+  digit2adder min2(signal_2[0],signal_2[1],signal_1[0],signal_1[1],in_final[15:12],qn2,qn2r,reset);
 
 // Gives output for preset and set signals that feed the loader into the flipflops
 //16 bit output 
+wire add_or_sub;
+or(add_or_sub,add,sub);
+and(out_final[0],add_or_sub,in_final[0]);
+and(out_final[1],add_or_sub,in_final[1]);
+and(out_final[2],add_or_sub,in_final[2]);
+and(out_final[3],add_or_sub,in_final[3]);
+and(out_final[4],add_or_sub,in_final[4]);
+and(out_final[5],add_or_sub,in_final[5]);
+and(out_final[6],add_or_sub,in_final[6]);
+and(out_final[7],add_or_sub,in_final[7]);
 
- or(out_final[0],qn1[0]);
- or(out_final[1],qn1[1]);
- or(out_final[2],qn1[2]);
- or(out_final[3],qn1[3]);
- or(out_final[4],qn2[0]);
- or(out_final[5],qn2[1]);
- or(out_final[6],qn2[2]);
- or(out_final[7],qn2[3]);
+
+and(out_final[8], add_or_sub,qn1[0]);
+and(out_final[9], add_or_sub,qn1[1]);
+and(out_final[10],add_or_sub,qn1[2]);
+and(out_final[11],add_or_sub,qn1[3]);
+and(out_final[12],add_or_sub,qn2[0]);
+and(out_final[13],add_or_sub,qn2[1]);
+and(out_final[14],add_or_sub,qn2[2]);
+and(out_final[15],add_or_sub,qn2[3]);
 
 
 endmodule
