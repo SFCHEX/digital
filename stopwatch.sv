@@ -9,6 +9,8 @@ module stopwatch(input wire clk_in, REVERSE,START,RESET,SPEED_UP,SPEED_DOWN,ADD,
     wire [16:1]reset;
     reg [15:0] array[1:0];
     wire index_RESET;
+    wire selector;
+    wire signal;
 
 
     initial begin
@@ -27,8 +29,9 @@ module stopwatch(input wire clk_in, REVERSE,START,RESET,SPEED_UP,SPEED_DOWN,ADD,
 	 
     m3216 mx({values_from_adder[8:1],Q[8:1]},array[index_RESET],selector,values[16:1]);
 
-    or(permitter,ADD,SUBTRACT,RESET);
-
+    wire add_operation_completed;
+    or(add_operation_completed,values_from_adder[4],values_from_adder[3],values_from_adder[2],values_from_adder[1]);
+    or(permitter,signal,add_operation_completed,RESET);
     loader lo(permitter,values[16:1],set[16:1],reset[16:1]);
 
     wire REVERSE_i;
