@@ -42,7 +42,7 @@ registor4b r2(enableR2,in_final[15:12],q2T);
 digit1adder min1(signal_1[0],signal_1[1],in_final[11:8],qn1,qn1r,increment,decrement); 
 
 //1 min adder
-digit2adder min2(signal_2[0],signal_2[1],in_final[15:12],qn2,qn2r,reset);
+  digit2adder min2(signal_2[0],signal_2[1],signal_1[0],signal_1[1],in_final[15:12],qn2,qn2r,reset);
 
 // Gives output for preset and set signals that feed the loader into the flipflops
 //16 bit output 
