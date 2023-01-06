@@ -1,9 +1,10 @@
-module digit2adder(input add,sub,
+module digit2adder(input add,sub,addb,subb,
 input [3:0]Q,
 output [3:0]Qn,QnR,output reset);
 //def var
-wire enable,high,low;
+wire enable,enable2,high,low;
 or(enable,sub,add);
+ or(enable2,addb,subb);
 assign high=1;
 assign low=0;
 wire [3:0]b;
@@ -42,10 +43,10 @@ or(o50,if5,if0,DN1); //or both
 and(reset,o50,enable)  ; //reset signal
 
 //Output manipulations
- m22 mQn0(Qn[0],QnT[0],low,enable,reset);  
- m22 mQn1(Qn[1],QnT[1],low,enable,reset);   
- m22 mQn2(Qn[2],QnT[2],low,enable,reset);
- m22 mQn3(Qn[3],QnT[3],low,enable,reset);
+ m22 mQn0(Qn[0],QnT[0],low,enable2,reset);  
+ m22 mQn1(Qn[1],QnT[1],low,enable2,reset);   
+ m22 mQn2(Qn[2],QnT[2],low,enable2,reset);
+ m22 mQn3(Qn[3],QnT[3],low,enable2,reset);
 
 //QnR
 wire [3:0]nQn;
