@@ -29,8 +29,6 @@ wire increment,decrement,enableR2;
 Signal2 signal2(increment,decrement,signal_1,enableR2,signal_2);
 
 //Filling registors//
-//assign q1T = in_final[11:8];
-//assign q2T = in_final[15:12];
 registor4b r1(enableR1,in_final[11:8],q1T);  
 registor4b r2(enableR1,in_final[15:12],q2T);
 

@@ -1,7 +1,7 @@
 
 module registor4b(input C,
 input [3:0]D,
-input [3:0]Q
+output [3:0]Q
 );
 
 //Clock signal will be add/sub
