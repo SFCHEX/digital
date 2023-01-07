@@ -12,10 +12,6 @@ output reset
 Buttons are pressed-->signal1 module-->signal 01/11-->Clock opens for registors-->values are passed to adding digit 1:
 */
 //defs 
-wire [3:0]q1;
-wire [3:0]q2;
-
-
 //Temps
 wire [3:0]q1T;
 wire [3:0]q2T;
@@ -33,16 +29,18 @@ wire increment,decrement,enableR2;
 Signal2 signal2(increment,decrement,signal_1,enableR2,signal_2);
 
 //Filling registors//
+//assign q1T = in_final[11:8];
+//assign q2T = in_final[15:12];
 registor4b r1(enableR1,in_final[11:8],q1T);  
-registor4b r2(enableR2,in_final[15:12],q2T);
+registor4b r2(enableR1,in_final[15:12],q2T);
 
 //adding modules//
 
 // 2min adder
-digit1adder min1(signal_1[0],signal_1[1],in_final[11:8],qn1,qn1r,increment,decrement); 
+digit1adder min1(signal_1[0],signal_1[1],q1T,qn1,qn1r,increment,decrement); 
 
 //1 min adder
-  digit2adder min2(signal_2[0],signal_2[1],signal_1[0],signal_1[1],in_final[15:12],qn2,qn2r,reset);
+  digit2adder min2(signal_2[0],signal_2[1],signal_1[0],signal_1[1],q2T,qn2,qn2r,reset);
 
 // Gives output for preset and set signals that feed the loader into the flipflops
 //16 bit output 
