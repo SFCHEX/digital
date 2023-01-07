@@ -1,3 +1,6 @@
+
+
+
 module boolean_circuit_11(input wire R,Q1,Q2,Q3,Q4, output wire out);
     wire R_i,Q1_i,Q2_i,Q3_i,Q4_i;
     not (R_i, R);
@@ -10,6 +13,6 @@ module boolean_circuit_11(input wire R,Q1,Q2,Q3,Q4, output wire out);
     and(term1,R_i,Q4,Q1);
     and(term2,R,Q4_i,Q3_i,Q2_i,Q1_i);
 
-    or(out,term1,term2,enable1,enable2,enable3);
+    or(out,term1,term2);
 
 endmodule
