@@ -43,13 +43,13 @@ and(if1,QnRT[0],QnRT[1],QnRT[2],QnT[3]); //0001
 and(DN1,sub,if1);
 
 or(o50,if5,if0,DN1); //or both
-and(reset,o50,enable)  ; //reset signal
+and(reset,o50,enable) ; //reset signal
 
 //Output manipulations
- m22 mQn0(Qn[0],QnT[0],low,enable,reset);  
- m22 mQn1(Qn[1],QnT[1],low,enable,reset);   
- m22 mQn2(Qn[2],QnT[2],low,enable,reset);
- m22 mQn3(Qn[3],QnT[3],low,enable,reset);
+ m22 mQn0(Qn[0],QnT[0],low,high,reset);  
+ m22 mQn1(Qn[1],QnT[1],low,high,reset);   
+ m22 mQn2(Qn[2],QnT[2],low,high,reset);
+ m22 mQn3(Qn[3],QnT[3],low,high,reset);
 
 //QnR
 wire [3:0]nQn;
