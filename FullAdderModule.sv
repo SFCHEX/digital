@@ -29,16 +29,16 @@ wire increment,decrement,enableR2;
 Signal2 signal2(increment,decrement,signal_1,enableR2,signal_2);
 
 //Filling registors//
-registor4b r1(enableR1,in_final[11:8],q1T);  
-registor4b r2(enableR1,in_final[15:12],q2T);
+wire [15:0]in_temp;
+registor16b R1(enableR1,in_final,in_temp);
 
 //adding modules//
 
 // 2min adder
-digit1adder min1(signal_1[0],signal_1[1],q1T,qn1,qn1r,increment,decrement); 
+digit1adder min1(signal_1[0],signal_1[1],in_temp[11:8],qn1,qn1r,increment,decrement); 
 
 //1 min adder
-digit2adder min2(signal_2[0],signal_2[1],signal_1[0],signal_1[1],q2T,qn2,qn2r,reset);
+digit2adder min2(signal_2[0],signal_2[1],signal_1[0],signal_1[1],in_temp[15:12],qn2,qn2r,reset);
 
 
 // Gives output for preset and set signals that feed the loader into the flipflops
