@@ -34,7 +34,7 @@ module stopwatch(input wire clk_in, REVERSE,START,RESET,SPEED_UP,SPEED_DOWN,ADD,
 
     wire START_i;
     not(START_i,START);
-    bool_equation_reverse_signals(START_i,REVERSE,REVERSE_SIGNAL,ERROR_1);
+    bool_equation_reverse_signals b1(START_i,REVERSE,REVERSE_SIGNAL,ERROR_1);
 //  lat l(REVERSE,START_i,REVERSE_SIGNAL);
     //boolean_count_mode countMode(START,SPEED_UP,SPEED_DOWN);
     clock_signals cs(clk_in,SPEED_DOWN,SPEED_UP,clk,ERROR_2);

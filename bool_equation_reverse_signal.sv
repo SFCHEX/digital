@@ -1,7 +1,7 @@
 module bool_equation_reverse_signals(
     input pause,reverse,
-    output reverse_signal,error_code_1;
-)
+    output reverse_signal,error_code_1
+);
 wire high;
 assign high =1;
 wire error;
