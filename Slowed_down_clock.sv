@@ -6,7 +6,7 @@ module Slowed_down_clock(input clock_in,output reg clock_out);
 // input clock on FPGA
 // output clock after dividing the input clock by divisor
 reg[27:0] counter=28'd0;
-parameter DIVISOR = 28'd8;
+parameter DIVISOR = 28'd100000;
 // The frequency of the output clk_out
 always @(posedge clock_in)
 begin
