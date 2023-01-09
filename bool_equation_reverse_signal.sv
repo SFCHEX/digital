@@ -4,9 +4,7 @@ module bool_equation_reverse_signals(
 );
 wire high;
 assign high =1;
-wire error;
-not(enable,pause);   //error if pause is low
 Dlatch DL(reverse,pause,high,reverse_signal);
-and(error_code_1,error);
+and(error_code_1,pause);
 
 endmodule

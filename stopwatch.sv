@@ -86,6 +86,6 @@ module stopwatch(input wire clk_in, REVERSE,START,RESET,SPEED_UP,SPEED_DOWN,ADD,
 
     m3216 mx_2(Q,error_code[error_index],error_signal,before_reg);  //error signal is 0 then display values as normal
 
-    registor16b R3(display_enable,before_reg,D_Q);  //manipulate display_enable
+    Latch16b L1(display_enable,before_reg,D_Q);  //manipulate display_enable
 	 
 endmodule
