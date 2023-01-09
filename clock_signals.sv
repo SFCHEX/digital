@@ -1,4 +1,4 @@
-module clock_signals(input clock,slow_down,speed_up,output out_clock);
+module clock_signals(input clock,slow_down,speed_up,output out_clock,error_code_2);
 
 //temp clock
 reg clock_normal,clock_fast,clock_slow;
@@ -7,5 +7,5 @@ Sped_up_clock mode_fast(clock,clock_fast);
 Slowed_down_clock mode_slow(clock,clock_slow);
 
 m41 mode(clock_normal,clock_fast,clock_slow,clock_normal,speed_up,slow_down,out_clock);
-
+and(error_code_2,slow_down,speed_up);
 endmodule
