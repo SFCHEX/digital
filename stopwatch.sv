@@ -80,7 +80,8 @@ module stopwatch(input wire clk_in, REVERSE,START,RESET,SPEED_UP,SPEED_DOWN,ADD,
     registor16b R2(enable_r,Q,PEV_Q);
 
     or(error_signal,ERROR_1,ERROR_2);
-    not(display_enable,error_signal);
+
+    not(display_enable,ERROR_1);
 
     bool_equation_error_index ei(ERROR_1,ERROR_2,error_index);
 
