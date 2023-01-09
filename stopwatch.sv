@@ -1,4 +1,4 @@
-module stopwatch(input wire clk_in, REVERSE,START,RESET,SPEED_UP,SPEED_DOWN,ADD,SUBTRACT,output wire [16:1]D_Q);
+module stopwatch(input wire clk_in, REVERSE,START,RESET,SPEED_UP,SPEED_DOWN,ADD,SUBTRACT,output wire [27:0]D_Q);
     wire enableCondition1,enableCondition2,enableCondition3;
 	wire enableCounter1,enableCounter2,enableCounter3;
     wire permitter;
@@ -20,6 +20,7 @@ module stopwatch(input wire clk_in, REVERSE,START,RESET,SPEED_UP,SPEED_DOWN,ADD,
     wire ERROR_1,ERROR_2;
     wire error_index;
     wire [15:0]before_reg;
+    wire [15:0]after_reg;
     wire[16:1]Q;
 
 
@@ -81,12 +82,18 @@ module stopwatch(input wire clk_in, REVERSE,START,RESET,SPEED_UP,SPEED_DOWN,ADD,
 
     or(error_signal,ERROR_1,ERROR_2);
 
-    not(display_enable,ERROR_1);
+
+    bool_flashing bflash(ERROR_2,clk,display_enable);
 
     bool_equation_error_index ei(ERROR_1,ERROR_2,error_index);
 
     m3216 mx_2(Q,error_code[error_index],error_signal,before_reg);  //error signal is 0 then display values as normal
 
-    Latch16b L1(display_enable,before_reg,D_Q);  //manipulate display_enable
+    Latch16b L1(display_enable,before_reg,after_reg);  //manipulate display_enable
+
+    segment7 display_1(after_reg[3:0],D_Q[6:0]) ;
+    segment7 display_2(after_reg[7:4],D_Q[13:7]);
+    segment7 display_3( after_reg[11:8],D_Q[20:14]);
+    segment7 display_4(after_reg[15:12], D_Q[27:21]);
 	 
 endmodule
