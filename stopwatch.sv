@@ -15,25 +15,26 @@ module stopwatch(input wire clk_in, REVERSE,START,RESET,SPEED_UP,SPEED_DOWN,ADD,
     wire enable_r;
     wire [15:0]PEV_Q;
     wire REVERSE_SIGNAL;
-    wire [15:0]error_code[1:0];
+    reg [15:0]error_code[1:0];
     wire display_enable;
     wire ERROR_1,ERROR_2;
     wire error_index;
-    wire [15:0]before_reg
+    wire [15:0]before_reg;
+    wire[16:1]Q;
 
 
 
     initial begin
         array[0] = 16'b0001_0000_0010_0000; // 1020 BCD binary
         array[1] = 16'b0100_1001_0011_0000; // 4930 BCD binary
-        error_code[0]=16'b;
+        //error_code[0]=16'b;
         error_code[1]=16'b0101_0101_0101_0101;
     end 
 
 
     wire START_i;
     not(START_i,START);
-    bool_equation_reverse_signals(START_i,REVERSE,REVERSE_SIGNAL,ERROR_1)
+    bool_equation_reverse_signals(START_i,REVERSE,REVERSE_SIGNAL,ERROR_1);
 //  lat l(REVERSE,START_i,REVERSE_SIGNAL);
     //boolean_count_mode countMode(START,SPEED_UP,SPEED_DOWN);
     clock_signals cs(clk_in,SPEED_DOWN,SPEED_UP,clk,ERROR_2);
@@ -84,7 +85,7 @@ module stopwatch(input wire clk_in, REVERSE,START,RESET,SPEED_UP,SPEED_DOWN,ADD,
     bool_equation_error_index ei(ERROR_1,ERROR_2,error_index);
 
     m3216 mx_2(Q,error_code[error_index],error_signal,before_reg);  //error signal is 0 then display values as normal
-    
-    registor16b R2(display_enable,before_reg,D_Q);  //manipulate display_enable
+
+    registor16b R3(display_enable,before_reg,D_Q);  //manipulate display_enable
 	 
 endmodule
