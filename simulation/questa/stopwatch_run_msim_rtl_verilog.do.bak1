@@ -1,0 +1,18 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vlog -sv -work work +incdir+D:/Documents/digital {D:/Documents/digital/Signal2.sv}
+vlog -sv -work work +incdir+D:/Documents/digital {D:/Documents/digital/Signal1.sv}
+vlog -sv -work work +incdir+D:/Documents/digital {D:/Documents/digital/m22.sv}
+vlog -sv -work work +incdir+D:/Documents/digital {D:/Documents/digital/FullAdderModule.sv}
+vlog -sv -work work +incdir+D:/Documents/digital {D:/Documents/digital/full4adder.sv}
+vlog -sv -work work +incdir+D:/Documents/digital {D:/Documents/digital/digit2adder.sv}
+vlog -sv -work work +incdir+D:/Documents/digital {D:/Documents/digital/digit1adder.sv}
+vlog -sv -work work +incdir+D:/Documents/digital {D:/Documents/digital/DFlop.sv}
+vlog -sv -work work +incdir+D:/Documents/digital {D:/Documents/digital/bitAdder.sv}
+vlog -sv -work work +incdir+D:/Documents/digital {D:/Documents/digital/registor16b.sv}
+
