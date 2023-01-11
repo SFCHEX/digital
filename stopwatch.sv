@@ -1,4 +1,6 @@
-module stopwatch(input wire clk_in, REVERSE,START,RESET,SPEED_UP,SPEED_DOWN,ADD,SUBTRACT,output wire [27:0]D_Q);
+module stopwatch(input wire clk_in, REVERSE,START,RESET_i,SPEED_UP,SPEED_DOWN,BUTTON_i,output wire [27:0]D_Q);
+    wire RESET;
+    wire BUTTON;
     wire enableCondition1,enableCondition2,enableCondition3;
 	wire enableCounter1,enableCounter2,enableCounter3;
     wire permitter;
@@ -22,6 +24,7 @@ module stopwatch(input wire clk_in, REVERSE,START,RESET,SPEED_UP,SPEED_DOWN,ADD,
     wire [15:0]before_reg;
     wire [27:0]after_seven;
     wire[16:1]Q;
+    wire ADD,SUBTRACT;
 
 
 
@@ -35,6 +38,9 @@ module stopwatch(input wire clk_in, REVERSE,START,RESET,SPEED_UP,SPEED_DOWN,ADD,
 
     wire START_i;
     not(START_i,START);
+    not(RESET,RESET_i);
+    not(BUTTON,BUTTON_i);
+    add_sub_signal b0(REVERSE,BUTTON,ADD,SUBTRACT);
     bool_equation_reverse_signals b1(START_i,REVERSE,REVERSE_SIGNAL,ERROR_1);
 //  lat l(REVERSE,START_i,REVERSE_SIGNAL);
     //boolean_count_mode countMode(START,SPEED_UP,SPEED_DOWN);
