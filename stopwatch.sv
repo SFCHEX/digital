@@ -20,7 +20,7 @@ module stopwatch(input wire clk_in, REVERSE,START,RESET,SPEED_UP,SPEED_DOWN,ADD,
     wire ERROR_1,ERROR_2;
     wire error_index;
     wire [15:0]before_reg;
-    wire [15:0]after_reg;
+    wire [27:0]after_seven;
     wire[16:1]Q;
 
 
@@ -89,11 +89,11 @@ module stopwatch(input wire clk_in, REVERSE,START,RESET,SPEED_UP,SPEED_DOWN,ADD,
 
     m3216 mx_2(Q,error_code[error_index],error_signal,before_reg);  //error signal is 0 then display values as normal
 
-    Latch16b L1(display_enable,before_reg,after_reg);  //manipulate display_enable
-
-    segment7 display_1(after_reg[3:0],D_Q[6:0]) ;
-    segment7 display_2(after_reg[7:4],D_Q[13:7]);
-    segment7 display_3( after_reg[11:8],D_Q[20:14]);
-    segment7 display_4(after_reg[15:12], D_Q[27:21]);
+    segment7 display_1(before_reg[3:0],after_seven[6:0]) ;
+    segment7 display_2(before_reg[7:4],after_seven[13:7]);
+    segment7 display_3( before_reg[11:8],after_seven[20:14]);
+    segment7 display_4(before_reg[15:12], after_seven[27:21]);
 	 
+
+    Latch16b L1(display_enable,after_seven,D_Q);  //manipulate display_enable
 endmodule
